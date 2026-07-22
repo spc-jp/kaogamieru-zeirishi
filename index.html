@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>はじめまして税理士みっけ｜みらい先生</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<style>
+  :root{
+    --paper:#F7F4EE;
+    --ink:#2E3A34;
+    --ink-soft:#5B6A62;
+    --sage:#6B8E7F;
+    --sage-deep:#4A6B5C;
+    --sage-tint:#EAF1EC;
+    --honey:#E0A756;
+    --honey-deep:#C88C3C;
+    --line:#E3DDD1;
+    --white:#FFFFFF;
+    --shadow:0 8px 30px rgba(46,58,52,.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+    padding:0 0 40px;
+  }
+  .wrap{max-width:560px;margin:0 auto;padding:0 16px}
+
+  /* ヘッダー（先生の顔＋名前） */
+  header{
+    text-align:center;
+    padding:34px 16px 22px;
+  }
+  .avatar{
+    width:96px;height:96px;border-radius:50%;
+    margin:0 auto 14px;
+    background:var(--sage-tint);
+    border:3px solid var(--white);
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+  }
+  /* ↓ 実際の先生の写真に差し替えるときは、この<svg>を <img src="sensei.jpg" ...> に置き換えてください */
+  .avatar svg{width:100%;height:100%}
+  .sensei-name{
+    font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
+    font-size:15px;color:var(--sage-deep);letter-spacing:.08em;
+  }
+  .sensei-name b{font-size:21px;display:block;color:var(--ink);margin-top:2px;letter-spacing:.04em}
+  .office{font-size:12px;color:var(--ink-soft);margin-top:6px;letter-spacing:.05em}
+
+  /* 会話エリア */
+  .chat{margin-top:8px}
+  .row{display:flex;gap:10px;margin-bottom:18px;align-items:flex-start;
+       opacity:0;transform:translateY(8px);animation:pop .5s ease forwards}
+  @keyframes pop{to{opacity:1;transform:none}}
+  .mini{
+    flex:0 0 40px;width:40px;height:40px;border-radius:50%;
+    background:var(--sage-tint);border:2px solid var(--white);overflow:hidden;
+    box-shadow:0 2px 8px rgba(46,58,52,.08);
+  }
+  .mini svg{width:100%;height:100%}
+  .bubble{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:4px 18px 18px 18px;
+    padding:16px 18px;
+    box-shadow:var(--shadow);
+    font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
+    font-size:15.5px;color:var(--ink);
+    white-space:pre-wrap;
+  }
+  .bubble .tag{
+    display:inline-block;font-family:"Hiragino Sans",sans-serif;
+    font-size:11px;color:var(--sage-deep);background:var(--sage-tint);
+    padding:2px 10px;border-radius:20px;margin-bottom:10px;letter-spacing:.05em;
+  }
+
+  /* 選択ボタン */
+  .choices{margin:6px 0 4px}
+  .group-label{
+    font-size:12px;color:var(--ink-soft);letter-spacing:.08em;
+    margin:20px 0 10px;padding-left:4px;display:flex;align-items:center;gap:8px;
+  }
+  .group-label::before{content:"";width:14px;height:2px;background:var(--sage);border-radius:2px}
+  .btn{
+    display:block;width:100%;text-align:left;
+    background:var(--white);border:1px solid var(--line);
+    border-radius:14px;padding:15px 18px;margin-bottom:10px;
+    font-size:15px;color:var(--ink);cursor:pointer;
+    transition:transform .12s ease,border-color .12s ease,box-shadow .12s ease;
+    font-family:inherit;line-height:1.6;
+  }
+  .btn:hover{transform:translateY(-1px);border-color:var(--sage);box-shadow:var(--shadow)}
+  .btn:focus-visible{outline:2px solid var(--sage);outline-offset:2px}
+  .btn .arrow{float:right;color:var(--sage);opacity:.7}
+  .btn.mamori{border-left:4px solid #A7BEC7}
+  .btn.seme{border-left:4px solid var(--honey)}
+
+  /* CTA */
+  .cta-wrap{
+    text-align:center;margin-top:14px;
+    opacity:0;transform:translateY(8px);animation:pop .5s ease forwards
+  }
+  .cta{
+    display:inline-block;background:var(--honey);color:#fff;
+    font-size:16px;font-weight:700;text-decoration:none;
+    padding:15px 34px;border-radius:30px;
+    box-shadow:0 8px 22px rgba(224,167,86,.35);
+    transition:transform .12s ease,background .12s ease;letter-spacing:.03em;
+  }
+  .cta:hover{transform:translateY(-2px);background:var(--honey-deep)}
+  .cta-note{font-size:12.5px;color:var(--ink-soft);margin-top:10px}
+
+  /* 戻る */
+  .back{
+    display:block;margin:22px auto 0;background:none;border:none;
+    color:var(--ink-soft);font-size:13px;cursor:pointer;
+    text-decoration:underline;text-underline-offset:3px;font-family:inherit;
+  }
+  .back:hover{color:var(--sage-deep)}
+
+  footer{text-align:center;font-size:11px;color:#A7A093;margin-top:34px;letter-spacing:.04em}
+
+  /* タイピング表示 */
+  .typing .bubble{color:var(--ink-soft)}
+  .dots span{
+    display:inline-block;width:6px;height:6px;margin:0 2px;border-radius:50%;
+    background:var(--sage);opacity:.4;animation:blink 1.2s infinite
+  }
+  .dots span:nth-child(2){animation-delay:.2s}
+  .dots span:nth-child(3){animation-delay:.4s}
+  @keyframes blink{0%,60%,100%{opacity:.35}30%{opacity:1}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="avatar" id="mainAvatar"></div>
+    <div class="sensei-name">税理士<b>みらい先生</b></div>
+    <div class="office">みらい税理士事務所（デモ）</div>
+  </header>
+
+  <div class="chat" id="chat"></div>
+
+  <footer>Powered by Smile Plus Consulting ／ 顔の見えるAI・デモ版</footer>
+</div>
+
+<script>
+/* ===== 先生キャラのSVG（写真に差し替え可） ===== */
+var FACE_SVG = '<img src="data:image/jpeg;base64,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" style="width:100%;height:100%;object-fit:cover;display:block" alt="みらい先生">';
+
+document.getElementById('mainAvatar').innerHTML = FACE_SVG;
+
+/* ===== 会話データ ===== */
+var GREETING =
+  "はじめまして😊 税理士のみらいです。\n\n"+
+  "税金や経営のこと、「こんなこと聞いていいのかな」と思うようなことでも大丈夫ですよ。\n\n"+
+  "まずは、いまいちばん気になっていることから、ゆっくり聞かせてください。";
+
+var TOPICS = [
+  { group:"mamori", label:"開業したばかりで、申告が不安です",
+    reply:"開業されたばかりなのですね😊 まずは、その一歩を踏み出されたこと、本当におめでとうございます。\n\n最初のうちは「何を、いつまでに、どうすれば」がわからなくて当然です。私が最初にお伝えしているのは、"+
+          "「完璧にやろうとしなくて大丈夫」ということ。\n\nもしよかったら、いまのお気持ちにいちばん近いのは、どれですか?",
+    followups:[
+      { label:"何から手をつけていいかわからない",
+        reply:"大丈夫ですよ😊 最初の一歩は「まずこれだけやればいい」を一緒に決めるところから。順番さえ見えれば、ぐっと楽になります。" },
+      { label:"帳簿つけが続くか不安です",
+        reply:"続けられるか不安、よくわかります😊 実は"続く"のは、がんばりではなく"仕組み"で作れるんです。あなたに合ったやり方を一緒に見つけましょう。" },
+      { label:"税理士に頼む費用が心配です",
+        reply:"費用のこと、正直に気にしてくださってうれしいです😊 無理のない範囲から始められるよう、まずはご状況を聞かせてくださいね。" }
+    ] },
+
+  { group:"mamori", label:"法人化のタイミングを知りたいです",
+    reply:"法人化、気になりますよね😊 とても良いタイミングでのご相談だと思います。\n\n実は「利益がいくらになったら」という数字の話より先に、私は"+
+          "「これから会社をどう育てていきたいか」をお聞きするようにしています。\n\nいまのお気持ちに近いのは、どれでしょう?",
+    followups:[
+      { label:"節税になるのか知りたい",
+        reply:"節税の効果は、会社の状況で本当に変わります😊 あなたの場合はどうか、具体的な数字で一緒に見てみましょう。" },
+      { label:"手続きが大変そうで踏み切れない",
+        reply:"手続き、たしかに一人だと大変です😊 でもそこは私が段取りをぜんぶお手伝いします。社長は前に進むことだけ考えてくだされば大丈夫です。" },
+      { label:"まだ早い気もして迷っている",
+        reply:"迷うのは、それだけ真剣に考えている証拠だと思います😊 早いかどうかも含めて、一度いっしょに整理してみませんか。" }
+    ] },
+
+  { group:"mamori", label:"相続のことが気になっています",
+    reply:"相続のこと、気にかけていらっしゃるのですね。とても大切なことです😊\n\n相続の相談は、数字よりも「ご家族への想い」から始まることがほとんどです。"+
+          "\n\n差し支えなければ、いまいちばん気になっているのは、どれですか?",
+    followups:[
+      { label:"何から準備すればいいかわからない",
+        reply:"焦らなくて大丈夫です😊 まずは今の状況を、ひとつずつ一緒に整理するところから始めましょう。" },
+      { label:"家族でもめないか心配です",
+        reply:"ご家族への想いがあるからこその心配ですね😊 円満に遺すための準備、一緒に丁寧に考えていきましょう。" },
+      { label:"税金がどれくらいか不安です",
+        reply:"税金の不安は、先に見通しが立つとぐっと軽くなります😊 まずはおおよそのところを、一緒に確かめてみましょう。" }
+    ] },
+
+  { group:"seme", label:"経営計画を立てたいです",
+    reply:"経営計画ですね😊 とても前向きな一歩だと思います。\n\n計画というと、いきなり数字や表を思い浮かべる方が多いのですが、私はいつも、"+
+          "数字よりも先に社長の想いからお聞きするようにしています。\n\nもしよかったら、いまのお気持ちに近いのは、どれですか?",
+    followups:[
+      { label:"何から手をつけていいかわからない",
+        reply:"大丈夫です😊 計画は"想い"を言葉にするところから。順番は私が一緒に組み立てますから、まっさらな状態で来てくださいね。" },
+      { label:"数字が苦手で後回しにしてしまう",
+        reply:"数字が苦手でも、まったく問題ありません😊 想いさえ聞かせてもらえれば、数字は私が形にします。得意なところで役に立たせてください。" },
+      { label:"やりたいことを言葉にできない",
+        reply:"やりたいことがある、それがいちばんの宝物です😊 その言葉にならない想いを、一緒に言葉にしていくのが私の仕事です。" }
+    ] },
+
+  { group:"seme", label:"銀行融資に向けて数字を整えたいです",
+    reply:"融資に向けての準備ですね😊 会社を前に進めようとされている、その姿勢が素晴らしいです。\n\n銀行に伝わる数字というのは、"+
+          "実は「社長がどこへ向かっているか」がちゃんと見える数字のことなんです。\n\nいまのお気持ちに近いのは、どれでしょう?",
+    followups:[
+      { label:"何を準備すればいいかわからない",
+        reply:"必要な準備は、状況によって変わります😊 あなたに必要なものだけを、一緒にそろえていきましょう。" },
+      { label:"断られないか不安です",
+        reply:"不安ですよね😊 でも、伝わる計画をきちんと作れば、通る可能性はぐっと上がります。そこを一緒に仕上げましょう。" },
+      { label:"数字づくりに自信がない",
+        reply:"数字づくりは、私のいちばん得意なところです😊 社長は未来を語ってくだされば、それを数字に翻訳するのは任せてください。" }
+    ] },
+
+  { group:"seme", label:"補助金を使って設備投資を考えています",
+    reply:"補助金を活かした設備投資、いいですね😊 会社の未来への大事な投資だと思います。\n\n補助金は種類も条件もさまざまですが、大切なのは"+
+          "「その設備で、会社をどう良くしたいか」という想いの部分です。\n\nいまいちばん気になっているのは、どれですか?",
+    followups:[
+      { label:"どの補助金が合うかわからない",
+        reply:"補助金は種類が多いですよね😊 やりたい設備投資のお話を伺えば、合うものを一緒に見つけられます。" },
+      { label:"書類づくりが大変そう",
+        reply:"書類、正直に言うと大変です😊 でもそこは私や専門のパートナーが伴走します。社長を一人にはしませんから、安心してくださいね。" },
+      { label:"採択されるか不安です",
+        reply:"採択の不安、わかります😊 想いの伝わる申請にすれば、可能性は高まります。一緒に、通る形に整えていきましょう。" }
+    ] }
+];
+
+/* ===== 描画ロジック ===== */
+var chat = document.getElementById('chat');
+
+function scrollToEnd(){ window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'}); }
+
+function senseiBubble(text, tag){
+  var row = document.createElement('div');
+  row.className = 'row';
+  var tagHtml = tag ? '<span class="tag">'+tag+'</span>' : '';
+  row.innerHTML =
+    '<div class="mini">'+FACE_SVG+'</div>'+
+    '<div class="bubble">'+tagHtml+text+'</div>';
+  chat.appendChild(row);
+  scrollToEnd();
+  return row;
+}
+
+function typingBubble(){
+  var row = document.createElement('div');
+  row.className = 'row typing';
+  row.innerHTML =
+    '<div class="mini">'+FACE_SVG+'</div>'+
+    '<div class="bubble"><span class="dots"><span></span><span></span><span></span></span></div>';
+  chat.appendChild(row);
+  scrollToEnd();
+  return row;
+}
+
+function showChoices(){
+  var box = document.createElement('div');
+  box.className = 'choices row';
+  box.style.animationDelay = '.1s';
+  box.style.display = 'block';
+
+  var mamori = TOPICS.filter(function(t){return t.group==='mamori';});
+  var seme   = TOPICS.filter(function(t){return t.group==='seme';});
+
+  var html = '<div style="width:100%">';
+  html += '<div class="group-label">いま気になっていること</div>';
+  mamori.forEach(function(t){
+    var i = TOPICS.indexOf(t);
+    html += '<button class="btn mamori" data-i="'+i+'">'+t.label+'<span class="arrow">›</span></button>';
+  });
+  html += '<div class="group-label">これから、を考えたいとき</div>';
+  seme.forEach(function(t){
+    var i = TOPICS.indexOf(t);
+    html += '<button class="btn seme" data-i="'+i+'">'+t.label+'<span class="arrow">›</span></button>';
+  });
+  html += '</div>';
+
+  box.innerHTML = html;
+  chat.appendChild(box);
+  scrollToEnd();
+
+  box.querySelectorAll('.btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var i = parseInt(b.getAttribute('data-i'),10);
+      chooseTopic(i, box);
+    });
+  });
+}
+
+function chooseTopic(i, choicesBox){
+  var t = TOPICS[i];
+  choicesBox.remove();
+
+  // 利用者が選んだ言葉を、右寄せの吹き出しふうに（簡易表示）
+  var userRow = document.createElement('div');
+  userRow.className = 'row';
+  userRow.style.justifyContent = 'flex-end';
+  userRow.innerHTML =
+    '<div class="bubble" style="background:var(--sage-tint);border:none;'+
+    'border-radius:18px 4px 18px 18px;font-family:inherit;font-size:14.5px;color:var(--sage-deep)">'+t.label+'</div>';
+  chat.appendChild(userRow);
+  scrollToEnd();
+
+  var typing = typingBubble();
+  setTimeout(function(){
+    typing.remove();
+    var tag = t.group==='seme' ? '前向きなご相談' : 'まずはお気持ちから';
+    senseiBubble(t.reply, tag);
+    setTimeout(function(){ showFollowups(t); }, 500);
+  }, 950);
+}
+
+function showFollowups(t){
+  var box = document.createElement('div');
+  box.className = 'choices row';
+  box.style.animationDelay = '.1s';
+  box.style.display = 'block';
+
+  var html = '<div style="width:100%">';
+  html += '<div class="group-label">いまのお気持ちに近いのは?</div>';
+  t.followups.forEach(function(f, idx){
+    html += '<button class="btn '+t.group+'" data-f="'+idx+'">'+f.label+'<span class="arrow">›</span></button>';
+  });
+  html += '</div>';
+
+  box.innerHTML = html;
+  chat.appendChild(box);
+  scrollToEnd();
+
+  box.querySelectorAll('.btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var idx = parseInt(b.getAttribute('data-f'),10);
+      chooseFollowup(t, idx, box);
+    });
+  });
+}
+
+function chooseFollowup(t, idx, choicesBox){
+  var f = t.followups[idx];
+  choicesBox.remove();
+
+  var userRow = document.createElement('div');
+  userRow.className = 'row';
+  userRow.style.justifyContent = 'flex-end';
+  userRow.innerHTML =
+    '<div class="bubble" style="background:var(--sage-tint);border:none;'+
+    'border-radius:18px 4px 18px 18px;font-family:inherit;font-size:14.5px;color:var(--sage-deep)">'+f.label+'</div>';
+  chat.appendChild(userRow);
+  scrollToEnd();
+
+  var typing = typingBubble();
+  setTimeout(function(){
+    typing.remove();
+    senseiBubble(f.reply, 'ありがとうございます');
+    setTimeout(showCTA, 550);
+  }, 950);
+}
+
+function showCTA(){
+  var w = document.createElement('div');
+  w.className = 'cta-wrap';
+  w.innerHTML =
+    '<a class="cta" href="#" onclick="return false;">面談を予約する（初回無料）</a>'+
+    '<div class="cta-note">この続きは、みらい先生と直接お話ししてみませんか😊</div>'+
+    '<button class="back" id="backBtn">← 別のことも相談してみる</button>';
+  chat.appendChild(w);
+  scrollToEnd();
+  document.getElementById('backBtn').addEventListener('click', showChoices);
+}
+
+/* ===== 起動 ===== */
+window.addEventListener('load', function(){
+  var typing = typingBubble();
+  setTimeout(function(){
+    typing.remove();
+    senseiBubble(GREETING);
+    setTimeout(showChoices, 550);
+  }, 900);
+});
+</script>
+</body>
+</html>
