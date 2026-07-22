@@ -103,6 +103,10 @@
   .btn .arrow{float:right;color:var(--sage);opacity:.7}
   .btn.mamori{border-left:4px solid #A7BEC7}
   .btn.seme{border-left:4px solid var(--honey)}
+  .btn.soft{border:1px dashed var(--line);background:#FBFAF6;color:var(--ink-soft);border-left:4px solid #CBBBA0}
+  .btn.soft:hover{border-color:var(--sage);color:var(--ink)}
+  .soft-lead{font-size:12px;color:#A7A093;letter-spacing:.06em;margin:24px 0 10px;padding-top:18px;
+             border-top:1px solid var(--line);text-align:center}
 
   /* CTA */
   .cta-wrap{
@@ -237,6 +241,19 @@ var TOPICS = [
         reply:"書類、正直に言うと大変です😊 でもそこは私や専門のパートナーが伴走します。社長を一人にはしませんから、安心してくださいね。" },
       { label:"採択されるか不安です",
         reply:"採択の不安、わかります😊 想いの伝わる申請にすれば、可能性は高まります。一緒に、通る形に整えていきましょう。" }
+    ] },
+
+  { group:"soft", label:"まだ、うまく言葉にできないんです",
+    reply:"大丈夫ですよ😊 むしろ、その状態でここに来てくださったことが、とても大事な一歩なんです。\n\n"+
+          "はっきりした悩みがなくても、なんとなく気になっていること、ちょっとした不安。そういうものの中に、実は大切なヒントが隠れていることが多いんです。\n\n"+
+          "よかったら、いまのお気持ちに近いのは、どれですか?",
+    followups:[
+      { label:"お金のことが、漠然と不安です",
+        reply:"その漠然とした不安、とてもよくわかります😊 何が不安なのかを一緒に言葉にするだけで、ずいぶん気持ちが軽くなるものですよ。" },
+      { label:"今のやり方でいいのか、たまに迷う",
+        reply:"迷いながらも続けてこられた、それ自体がすごいことです😊 一度立ち止まって、いまのやり方を一緒に見直してみませんか。" },
+      { label:"特に困ってないけど、話を聞いてみたい",
+        reply:"それが、いちばん健やかな来かたかもしれません😊 困ってからではなく、余裕のあるうちに話しておくと、いざというとき安心なんですよ。" }
     ] }
 ];
 
@@ -287,6 +304,13 @@ function showChoices(){
   seme.forEach(function(t){
     var i = TOPICS.indexOf(t);
     html += '<button class="btn seme" data-i="'+i+'">'+t.label+'<span class="arrow">›</span></button>';
+  });
+
+  var soft = TOPICS.filter(function(t){return t.group==='soft';});
+  soft.forEach(function(t){
+    var i = TOPICS.indexOf(t);
+    html += '<div class="soft-lead">どれもピンとこない方へ</div>';
+    html += '<button class="btn soft" data-i="'+i+'">'+t.label+'<span class="arrow">›</span></button>';
   });
   html += '</div>';
 
@@ -363,20 +387,36 @@ function chooseFollowup(t, idx, choicesBox){
   chat.appendChild(userRow);
   scrollToEnd();
 
+  var isSoft = (t.group === 'soft');
   var typing = typingBubble();
   setTimeout(function(){
     typing.remove();
     senseiBubble(f.reply, 'ありがとうございます');
-    setTimeout(showCTA, 550);
+    if(isSoft){
+      // フワッと来た人には、面談へのひとことをやわらかく添える
+      setTimeout(function(){
+        var t2 = typingBubble();
+        setTimeout(function(){
+          t2.remove();
+          senseiBubble("もしよかったら、一度お話だけでも聞かせてくださいね。\n\n答えを出す場ではなく、ただ気持ちを整理する時間だと思って、どうぞ気楽にいらしてください😊", "急かしません");
+          setTimeout(function(){ showCTA(true); }, 500);
+        }, 900);
+      }, 700);
+    } else {
+      setTimeout(function(){ showCTA(false); }, 550);
+    }
   }, 950);
 }
 
-function showCTA(){
+function showCTA(isSoft){
+  var note = isSoft
+    ? 'まずはお気持ちだけ、聞かせてください。急かしたりはしませんよ😊'
+    : 'この続きは、みらい先生と直接お話ししてみませんか😊';
   var w = document.createElement('div');
   w.className = 'cta-wrap';
   w.innerHTML =
     '<a class="cta" href="#" onclick="return false;">面談を予約する（初回無料）</a>'+
-    '<div class="cta-note">この続きは、みらい先生と直接お話ししてみませんか😊</div>'+
+    '<div class="cta-note">'+note+'</div>'+
     '<button class="back" id="backBtn">← 別のことも相談してみる</button>';
   chat.appendChild(w);
   scrollToEnd();
