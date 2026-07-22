@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>はじめまして税理士みっけ｜みらい先生</title>
+<title>顔の見える税理士｜みらい先生</title>
 <link rel="icon" href="favicon.ico">
 <link rel="icon" type="image/png" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -49,14 +49,23 @@
     animation:avatarIn 1s cubic-bezier(.22,.61,.36,1) both;
   }
   @keyframes avatarIn{from{opacity:0;transform:translateY(14px) scale(.94)}to{opacity:1;transform:none}}
+  .concept{animation:fadeUp .8s ease both}
+  .concept-sub{animation:fadeUp .8s ease both;animation-delay:.5s}
   .sensei-name,.office{animation:fadeUp .8s ease both;animation-delay:.35s}
   /* ↓ 実際の先生の写真に差し替えるときは、この<svg>を <img src="sensei.jpg" ...> に置き換えてください */
   .avatar svg{width:100%;height:100%}
+  .concept{
+    font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
+    font-size:23px;color:var(--ink);letter-spacing:.14em;line-height:1.5;
+  }
+  .concept::after{content:"";display:block;width:34px;height:2px;background:var(--sage);
+    border-radius:2px;margin:12px auto 4px;opacity:.85}
+  .concept-sub{font-size:12.5px;color:var(--sage-deep);letter-spacing:.06em;margin-top:8px}
   .sensei-name{
     font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
-    font-size:15px;color:var(--sage-deep);letter-spacing:.08em;
+    font-size:13px;color:var(--sage-deep);letter-spacing:.08em;
   }
-  .sensei-name b{font-size:21px;display:block;color:var(--ink);margin-top:2px;letter-spacing:.04em}
+  .sensei-name b{font-size:20px;display:block;color:var(--ink);margin-top:1px;letter-spacing:.05em}
   .office{font-size:12px;color:var(--ink-soft);margin-top:6px;letter-spacing:.05em}
 
   /* 会話エリア */
@@ -153,8 +162,10 @@
 <div class="wrap">
 
   <header>
+    <div class="concept">顔の見える税理士</div>
+    <div class="concept-sub">はじめての方も、どうぞ気軽に。</div>
     <div class="avatar" id="mainAvatar"></div>
-    <div class="sensei-name">税理士<b>みらい先生</b></div>
+    <div class="sensei-name"><b>みらい先生</b></div>
     <div class="office">みらい税理士事務所（デモ）</div>
   </header>
 
