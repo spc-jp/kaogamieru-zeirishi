@@ -46,7 +46,10 @@
     box-shadow:var(--shadow);
     overflow:hidden;
     display:flex;align-items:center;justify-content:center;
+    animation:avatarIn 1s cubic-bezier(.22,.61,.36,1) both;
   }
+  @keyframes avatarIn{from{opacity:0;transform:translateY(14px) scale(.94)}to{opacity:1;transform:none}}
+  .sensei-name,.office{animation:fadeUp .8s ease both;animation-delay:.35s}
   /* ↓ 実際の先生の写真に差し替えるときは、この<svg>を <img src="sensei.jpg" ...> に置き換えてください */
   .avatar svg{width:100%;height:100%}
   .sensei-name{
@@ -61,6 +64,8 @@
   .row{display:flex;gap:10px;margin-bottom:18px;align-items:flex-start;
        opacity:0;transform:translateY(8px);animation:pop .5s ease forwards}
   @keyframes pop{to{opacity:1;transform:none}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .reveal{opacity:0;animation:fadeUp .55s ease forwards}
   .mini{
     flex:0 0 40px;width:40px;height:40px;border-radius:50%;
     background:var(--sage-tint);border:2px solid var(--white);overflow:hidden;
@@ -287,30 +292,31 @@ function typingBubble(){
 
 function showChoices(){
   var box = document.createElement('div');
-  box.className = 'choices row';
-  box.style.animationDelay = '.1s';
-  box.style.display = 'block';
+  box.className = 'choices';
+  box.style.width = '100%';
 
   var mamori = TOPICS.filter(function(t){return t.group==='mamori';});
   var seme   = TOPICS.filter(function(t){return t.group==='seme';});
+  var soft   = TOPICS.filter(function(t){return t.group==='soft';});
+
+  var d = 0;
+  function delay(){ d += 0.13; return ' style="animation-delay:'+d.toFixed(2)+'s"'; }
 
   var html = '<div style="width:100%">';
-  html += '<div class="group-label">いま気になっていること</div>';
+  html += '<div class="group-label reveal"'+delay()+'>いま気になっていること</div>';
   mamori.forEach(function(t){
     var i = TOPICS.indexOf(t);
-    html += '<button class="btn mamori" data-i="'+i+'">'+t.label+'<span class="arrow">›</span></button>';
+    html += '<button class="btn mamori reveal"'+delay()+' data-i="'+i+'">'+t.label+'<span class="arrow">›</span></button>';
   });
-  html += '<div class="group-label">これから、を考えたいとき</div>';
+  html += '<div class="group-label reveal"'+delay()+'>これから、を考えたいとき</div>';
   seme.forEach(function(t){
     var i = TOPICS.indexOf(t);
-    html += '<button class="btn seme" data-i="'+i+'">'+t.label+'<span class="arrow">›</span></button>';
+    html += '<button class="btn seme reveal"'+delay()+' data-i="'+i+'">'+t.label+'<span class="arrow">›</span></button>';
   });
-
-  var soft = TOPICS.filter(function(t){return t.group==='soft';});
   soft.forEach(function(t){
     var i = TOPICS.indexOf(t);
-    html += '<div class="soft-lead">どれもピンとこない方へ</div>';
-    html += '<button class="btn soft" data-i="'+i+'">'+t.label+'<span class="arrow">›</span></button>';
+    html += '<div class="soft-lead reveal"'+delay()+'>どれもピンとこない方へ</div>';
+    html += '<button class="btn soft reveal"'+delay()+' data-i="'+i+'">'+t.label+'<span class="arrow">›</span></button>';
   });
   html += '</div>';
 
@@ -415,7 +421,7 @@ function showCTA(isSoft){
   var w = document.createElement('div');
   w.className = 'cta-wrap';
   w.innerHTML =
-    '<a class="cta" href="#" onclick="return false;">面談を予約する（初回無料）</a>'+
+    '<a class="cta" href="https://spc-jp.github.io/yoyaku-system/" target="_blank" rel="noopener">面談を予約する（初回無料）</a>'+
     '<div class="cta-note">'+note+'</div>'+
     '<button class="back" id="backBtn">← 別のことも相談してみる</button>';
   chat.appendChild(w);
@@ -429,7 +435,7 @@ window.addEventListener('load', function(){
   setTimeout(function(){
     typing.remove();
     senseiBubble(GREETING);
-    setTimeout(showChoices, 550);
+    setTimeout(showChoices, 1000);
   }, 900);
 });
 </script>
