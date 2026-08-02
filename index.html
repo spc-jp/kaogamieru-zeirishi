@@ -144,6 +144,26 @@
   .cta:hover{transform:translateY(-2px);background:var(--honey-deep)}
   .cta-note{font-size:12.5px;color:var(--ink-soft);margin-top:10px}
 
+  /* 3択の出口 */
+  .exit-card{display:block;width:100%;text-align:center;text-decoration:none;
+    border-radius:14px;padding:18px 16px;margin-bottom:12px;cursor:pointer;border:none;
+    font-family:inherit;transition:transform .12s ease,box-shadow .12s ease}
+  .exit-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+  .exit-title{font-size:17px;font-weight:700;letter-spacing:.03em;line-height:1.4}
+  .exit-sub{font-size:12.5px;margin-top:6px;opacity:.92;line-height:1.6}
+  .exit-primary{background:var(--honey);color:#fff}
+  .exit-secondary{background:var(--sage);color:#fff}
+  .exit-plain{background:var(--white);color:var(--ink);border:1px solid var(--line)}
+  .exit-plain .exit-sub{color:var(--ink-soft);opacity:1}
+
+  /* よくある質問 */
+  .faq{display:none;background:#FBFAF6;border:1px solid var(--line);border-radius:10px;margin:-4px 0 12px}
+  .faq.open{display:block}
+  .faq-item{padding:13px 16px;border-top:1px solid var(--line)}
+  .faq-item:first-child{border-top:none}
+  .faq-q{font-weight:600;color:var(--ink);font-size:13.5px}
+  .faq-a{color:var(--ink-soft);font-size:12.5px;margin-top:5px;line-height:1.85}
+
   /* 戻る */
   .back{
     display:block;margin:22px auto 0;background:none;border:none;
@@ -443,17 +463,34 @@ function chooseFollowup(t, idx, choicesBox){
 }
 
 function showCTA(isSoft){
-  var note = isSoft
+  var lead = isSoft
     ? 'まずはお気持ちだけ、聞かせてください。急かしたりはしませんよ😊'
-    : 'この続きは、みらい先生と直接お話ししてみませんか😊';
+    : 'この続きは、どうぞお好きな方法でご相談くださいね😊';
   var w = document.createElement('div');
   w.className = 'cta-wrap';
   w.innerHTML =
-    '<a class="cta" href="https://spc-jp.github.io/yoyaku-system/" target="_blank" rel="noopener">面談を予約する（初回無料）</a>'+
-    '<div class="cta-note">'+note+'</div>'+
-    '<button class="back" id="backBtn">← 別のことも相談してみる</button>';
+    '<div class="cta-note" style="margin:0 0 16px">'+lead+'</div>'+
+    '<a class="exit-card exit-primary" href="https://spc-jp.github.io/yoyaku-system/" target="_blank" rel="noopener">'+
+      '<div class="exit-title">面談を予約する（初回無料）</div>'+
+      '<div class="exit-sub">選んでいただいた内容を引き継ぎます</div></a>'+
+    '<button class="exit-card exit-secondary" id="faqBtn">'+
+      '<div class="exit-title">よくある質問を見る</div>'+
+      '<div class="exit-sub">相談の前に、気になることを確かめられます</div></button>'+
+    '<div class="faq" id="faqBox">'+
+      '<div class="faq-item"><div class="faq-q">相談は無料ですか？</div><div class="faq-a">はい、初回のご相談は無料です。まずはお気軽にどうぞ😊</div></div>'+
+      '<div class="faq-item"><div class="faq-q">何を用意すればいいですか？</div><div class="faq-a">特別な準備は要りません。手ぶらで、いまのお気持ちだけお持ちくださいね。</div></div>'+
+      '<div class="faq-item"><div class="faq-q">今は別の税理士と契約中でも大丈夫？</div><div class="faq-a">もちろんです。お話を聞くだけでも歓迎します。無理な勧誘はいたしません。</div></div>'+
+    '</div>'+
+    '<a class="exit-card exit-plain" href="tel:048-000-0000">'+
+      '<div class="exit-title">お電話でご相談</div>'+
+      '<div class="exit-sub">048-000-0000（平日 9:00〜17:30）</div></a>'+
+    '<button class="back" id="backBtn">はじめの画面にもどる</button>';
   chat.appendChild(w);
   scrollToEnd();
+  document.getElementById('faqBtn').addEventListener('click', function(){
+    document.getElementById('faqBox').classList.toggle('open');
+    scrollToEnd();
+  });
   document.getElementById('backBtn').addEventListener('click', showChoices);
 }
 
